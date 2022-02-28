@@ -14,5 +14,5 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 # Run App
 
 ## The project was developed on Visual Studio Code.
-1. Run `App.java` and choose the workshop that you want yo see.
+1. Run `App.java` and choose the workshop you want to see.
 2. Use the menu to follow the instructions.
