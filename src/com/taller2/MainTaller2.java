@@ -9,6 +9,7 @@ import com.taller2.Punto4.T2Punto4;
 import com.taller2.Punto5.T2Punto5;
 import com.taller2.Punto6.T2Punto6;
 import com.taller2.Punto7.T2Punto7;
+import com.taller2.Punto9.T2Punto9;
 
 public class MainTaller2 {
 
@@ -81,6 +82,10 @@ public class MainTaller2 {
             case 7:
                 T2Punto7 p7 = new T2Punto7();
                 p7.ejecutarPunto7();
+                return true;
+            case 9:
+                T2Punto9 p9 = new T2Punto9();
+                p9.ejecutarPunto9();
                 return true;
             case 0:
                 return false;
