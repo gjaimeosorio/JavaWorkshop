@@ -29,7 +29,7 @@ public class T2Punto7 {
     public void menu () {
         System.out.println(ANSI_GREEN + "Bienvenido a la Secretaría de Salud Municipal, favor seleccione una opción:" + ANSI_RESET);
 		System.out.println("1. Calcular Indice de Masa Corporal");
-        System.out.println("2. Salir de la aplicación");
+        System.out.println("0. Salir de la aplicación");
     }
 
     private static int capturarOpcion() {
@@ -51,7 +51,7 @@ public class T2Punto7 {
                 valImc = imc.calculoIMC(peso, estatura);
                 mensajeSalud(nombre, valImc);
                 return true;   
-            case 2:
+            case 0:
                 return false;
             default:
             System.out.println(ANSI_RED + "Opción incorrecta, favor seleccione una opción del menú!" + ANSI_RESET);
