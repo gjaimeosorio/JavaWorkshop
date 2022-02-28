@@ -40,15 +40,19 @@ public class T2Punto5 {
     }
 
     private boolean evaluarOpcion(int opcion) throws IOException {
+        String keyProducto;
         switch (opcion) {
             case 1:
-                comprarProducto();
+                listarProductos();
+                keyProducto = comprarProd();
+                mensajeProductoAd(keyProducto);
                 return true;
             case 2:
-                
+                listarProductos();
                 return true;
             case 3:
-                
+                keyProducto = productoDevolver();    
+                productoExiste(keyProducto);
                 return true;    
             case 4:
                 drogueria.limpiarProductos();
@@ -59,32 +63,58 @@ public class T2Punto5 {
         }
     }
 
-    private String capturarDatoString() {
-        return input.nextLine();
-    }
-
     private void mensajeDisponibilidad() {
         System.out.println(ANSI_GREEN + "Produtos disponibles:" + ANSI_RESET);
     }
 
-    private void comprarProducto() {
-        String prod;
+    private void listarProductos() {
+        int i = 1;
         mensajeDisponibilidad();
-        System.out.println(ANSI_GREEN + drogueria.getProductos() + ANSI_RESET + "\n");
-        
-        System.out.println(ANSI_GREEN + "Ingrese el producto que desea adquirir" + ANSI_RESET);
-        prod = capturarDatoString();
-        if (drogueria.getProductos().containsKey(prod)) 
-            System.out.println("El producto existe");
+        for (String prod:drogueria.getProductos().keySet()) {
+            int valor = drogueria.getProductos().get(prod);
+            System.out.println(i + ". " + prod + ", costo: " + valor);
+            i++;
+        }
+        System.out.println("");
     }
 
-    private void buscarContacto(String contact) {
-        
+    private String comprarProd() {
+        String nomProd = "";
+        System.out.println(ANSI_GREEN + "Ingrese el producto que desea adquirir (1-4)" + ANSI_RESET);
+        int product = capturarOpcion();
+        switch (product) {
+            case 1:
+                nomProd = "Aspirina";
+            case 2:
+                nomProd = "Suero";
+            case 3:
+                nomProd = "Alcohol";
+            case 4:
+                nomProd = "Acetaminofén";
+        }
+        return nomProd;
     }
 
-    private void getUsuarioPos(String contact) {
+    private void mensajeProductoAd(String keyProd) {
+        System.out.println(ANSI_GREEN + "Usted ha adquirido un " + keyProd + " por " + drogueria.getProductos().get(keyProd) + "\n"+ ANSI_RESET);
     }
 
+    private String capturarDatoString() {
+        return input.nextLine();
+    }
+
+    private String productoDevolver() {
+        System.out.println("Ingrese el nombre del producto que desea devolver:");
+        return capturarDatoString();
+    }
+
+    private void productoExiste(String keyProd) {
+        if (drogueria.getProductos().containsKey(keyProd))
+            System.out.println(ANSI_GREEN + "El producto " + keyProd + " ha sido devuelto!" + ANSI_RESET + "\n");
+        else
+            System.out.println(ANSI_RED + "El producto " + keyProd + " no existe!" + ANSI_RESET + "\n");
+    }
+    
     private static void limpiarPantalla() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
