@@ -13,6 +13,6 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 # Run App
 
-## The project was developed on Visual Studio Code.
+## The project was developed using Visual Studio Code.
 1. Run `src/App.java` and choose the workshop you want to see.
 2. Use the menu to follow the instructions.

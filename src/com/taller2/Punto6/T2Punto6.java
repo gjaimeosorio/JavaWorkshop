@@ -30,7 +30,7 @@ public class T2Punto6 {
         System.out.println(ANSI_GREEN + "Bienvenido al taller de motos 'El Maquinista', favor seleccione una opción:" + ANSI_RESET);
 		System.out.println("1. Registrar nuevo servicio de cliente");
 		System.out.println("2. Ver registros de clientes");
-        System.out.println("3. Salir de la aplicación");
+        System.out.println("0. Salir de la aplicación");
     }
 
     private static int capturarOpcion() {
@@ -56,7 +56,7 @@ public class T2Punto6 {
             case 2:
                 mostrarClientes();
                 return true;    
-            case 3:
+            case 0:
                 tallerMoto.limpiarClientes();
                 return false;
             default:
