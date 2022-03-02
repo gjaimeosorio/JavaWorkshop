@@ -3,6 +3,7 @@ package com.taller2;
 import java.io.IOException;
 import java.util.Scanner;
 import com.taller2.Punto1.T2Punto1;
+import com.taller2.Punto10.T2Punto10;
 import com.taller2.Punto2.T2Punto2;
 import com.taller2.Punto3.T2Punto3;
 import com.taller2.Punto4.T2Punto4;
@@ -91,6 +92,10 @@ public class MainTaller2 {
             case 9:
                 T2Punto9 p9 = new T2Punto9();
                 p9.ejecutarPunto9();
+                return true;
+            case 10:
+                T2Punto10 p10 = new T2Punto10();
+                p10.ejecutarPunto10();
                 return true;
             case 0:
                 return false;
